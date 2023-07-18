@@ -3,7 +3,7 @@
 }
 
 @font-face {
-    src: url("../fonts/Montserrat-Light.ttf");
+    src: url("../fonts/Montserrat-Regular.ttf");
 }
 
 .main-pane {
@@ -40,7 +40,7 @@
 .control-labels {
     -fx-text-fill: #333333;
     -fx-font-size: 17;
-    -fx-font-family: 'Montserrat Light', sans-serif;
+    -fx-font-family: 'Montserrat Regular', sans-serif;
     -fx-font-smoothing-type: gray;
 }
 
@@ -65,7 +65,7 @@
     -fx-border-color: #cbd5e1;
     -fx-background-color: #ffffff;
     -fx-font-size: 16;
-    -fx-font-family: 'Montserrat Light', sans-serif;
+    -fx-font-family: 'Montserrat Regular', sans-serif;
     -fx-font-smoothing-type: gray;
 }
 
@@ -75,7 +75,7 @@
 
 .user-selection .menu-item .label {
     -fx-font-size: 16;
-    -fx-font-family: 'Montserrat Light', sans-serif;
+    -fx-font-family: 'Montserrat Regular', sans-serif;
     -fx-font-smoothing-type: gray;
 }
 
@@ -90,7 +90,7 @@
     -fx-border-color: #4657a1;
     -fx-text-fill: #ffffff;
     -fx-font-size: 16;
-    -fx-font-family: 'Montserrat Light', sans-serif;
+    -fx-font-family: 'Montserrat Regular', sans-serif;
     -fx-font-smoothing-type: gray;
 }
 
@@ -105,7 +105,7 @@
     -fx-border-color: #cbd5e1;
     -fx-background-color: #ffffff;
     -fx-font-size: 16;
-    -fx-font-family: 'Montserrat Light', sans-serif;
+    -fx-font-family: 'Montserrat Regular', sans-serif;
     -fx-font-smoothing-type: gray;
 }
 
