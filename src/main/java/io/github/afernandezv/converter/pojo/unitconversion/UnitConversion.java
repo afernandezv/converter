@@ -46,15 +46,4 @@ public class UnitConversion {
     public void setResult(String result) {
         this.result = result;
     }
-
-    @Override
-    public String toString() {
-        return "UnitConversion{" +
-                "measure='" + measure + '\'' +
-                ", from=" + from +
-                ", to=" + to +
-                ", value=" + value +
-                ", result='" + result + '\'' +
-                '}';
-    }
 }
