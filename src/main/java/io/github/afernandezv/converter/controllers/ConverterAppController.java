@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.kordamp.ikonli.javafx.Icon;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,16 +13,16 @@ import java.util.ResourceBundle;
 public class ConverterAppController<T> implements Initializable {
     // Menu Icons
     @FXML
-    private Icon currencyButton;
+    private Button currencyButton;
 
     @FXML
-    private Icon lengthButton;
+    private Button lengthButton;
 
     @FXML
-    private Icon massButton;
+    private Button massButton;
 
     @FXML
-    private Icon temperatureButton;
+    private Button temperatureButton;
 
     // Controls
     @FXML
