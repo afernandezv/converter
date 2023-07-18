@@ -3,7 +3,7 @@ module io.github.afernandezv.converter {
     requires javafx.fxml;
     requires java.net.http;
     requires com.google.gson;
-    requires java.dotenv;
+    requires io.github.cdimascio.dotenv.java;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.ikonli.fontawesome5;
     requires org.kordamp.ikonli.materialdesign2;
