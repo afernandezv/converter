@@ -8,30 +8,40 @@
 <?import javafx.scene.layout.Pane?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="main-pane"
-            stylesheets="@../css/styles.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.afernandezv.converter.controllers.ConverterAppController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="main-pane" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.afernandezv.converter.controllers.ConverterAppController">
    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="menu-pane">
-      <FontIcon fx:id="massButton" iconLiteral="mdi2w-weight-kilogram" iconSize="50" layoutX="75.0" layoutY="200.0"
-                styleClass="font-icon" text="󰖢"/>
-      <FontIcon fx:id="temperatureButton" iconLiteral="fas-temperature-high" iconSize="50" layoutX="75.0"
-                layoutY="300.0" styleClass="font-icon"/>
-      <FontIcon fx:id="lengthButton" iconLiteral="fas-ruler-horizontal" iconSize="50" layoutX="68.0" layoutY="399.0"
-                styleClass="font-icon"/>
-      <FontIcon fx:id="currencyButton" iconLiteral="mdi2c-currency-usd-circle" iconSize="50" layoutX="75.0"
-                layoutY="100.0" styleClass="font-icon"/>
+      <Button fx:id="currencyButton" layoutX="65.0" layoutY="35.0" mnemonicParsing="false" styleClass="menu-buttons">
+         <graphic>
+            <FontIcon iconLiteral="mdi2c-currency-usd-circle" iconSize="50" styleClass="font-icon" />
+         </graphic>
+      </Button>
+      <Button fx:id="massButton" layoutX="65.0" layoutY="155.0" mnemonicParsing="false" styleClass="menu-buttons">
+         <graphic>
+            <FontIcon iconLiteral="mdi2w-weight-kilogram" iconSize="50" styleClass="font-icon" text="󰖢" />
+         </graphic>
+      </Button>
+      <Button fx:id="temperatureButton" layoutX="65.0" layoutY="275.0" mnemonicParsing="false" styleClass="menu-buttons">
+         <graphic>
+            <FontIcon iconLiteral="fas-temperature-high" iconSize="50" styleClass="font-icon" />
+         </graphic>
+      </Button>
+      <Button fx:id="lengthButton" layoutX="65.0" layoutY="395.0" mnemonicParsing="false" styleClass="menu-buttons">
+         <graphic>
+            <FontIcon iconLiteral="fas-ruler-horizontal" iconSize="50" styleClass="font-icon" />
+         </graphic>
+      </Button>
    </Pane>
    <Pane layoutX="200.0" prefHeight="200.0" prefWidth="200.0" styleClass="control-pane">
-      <ChoiceBox fx:id="fromSelect" layoutX="300.0" layoutY="156.0" prefWidth="150.0" styleClass="user-selection"/>
-      <ChoiceBox fx:id="toSelect" layoutX="550.0" layoutY="156.0" prefWidth="150.0" styleClass="user-selection"/>
-      <TextField fx:id="valueText" layoutX="50.0" layoutY="156.0" styleClass="current-value"/>
-      <Button fx:id="convertButton" layoutX="300.0" layoutY="246.0" mnemonicParsing="false"
-              styleClass="convert-button" text="Convertir"/>
-      <Label layoutX="50.0" layoutY="134.0" styleClass="control-labels" text="Valor"/>
-      <Label layoutX="300.0" layoutY="134.0" styleClass="control-labels" text="De"/>
-      <Label layoutX="550.0" layoutY="134.0" styleClass="control-labels" text="A"/>
-      <Label fx:id="headerText" layoutX="50.0" layoutY="50.0" styleClass="header-label"/>
+      <ChoiceBox fx:id="fromSelect" layoutX="300.0" layoutY="156.0" prefWidth="150.0" styleClass="user-selection" />
+      <ChoiceBox fx:id="toSelect" layoutX="550.0" layoutY="156.0" prefWidth="150.0" styleClass="user-selection" />
+      <TextField fx:id="valueText" layoutX="50.0" layoutY="156.0" styleClass="current-value" />
+      <Button fx:id="convertButton" layoutX="300.0" layoutY="246.0" mnemonicParsing="false" styleClass="convert-button" text="Convertir" />
+      <Label layoutX="50.0" layoutY="134.0" styleClass="control-labels" text="Valor" />
+      <Label layoutX="300.0" layoutY="134.0" styleClass="control-labels" text="De" />
+      <Label layoutX="550.0" layoutY="134.0" styleClass="control-labels" text="A" />
+      <Label fx:id="headerText" layoutX="50.0" layoutY="50.0" styleClass="header-label" />
    </Pane>
    <Pane layoutX="200.0" layoutY="350.0" prefHeight="200.0" prefWidth="200.0" styleClass="result-pane">
-      <Label fx:id="resultText" layoutY="55.0" styleClass="result-label"/>
+      <Label fx:id="resultText" layoutY="55.0" styleClass="result-label" />
    </Pane>
 </AnchorPane>
