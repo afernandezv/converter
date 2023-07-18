@@ -13,8 +13,8 @@ public enum MassUnit {
     LIBRA("Libra", "lb"),
     ;
 
-    private String name;
-    private String symbol;
+    private final String name;
+    private final String symbol;
 
     MassUnit(String name, String symbol) {
         this.name = name;

@@ -15,8 +15,8 @@ public enum LengthUnit {
     PIES("Pies", "ft"),
     MILLAS("Millas", "mi");
 
-    private String name;
-    private String symbol;
+    private final String name;
+    private final String symbol;
 
     LengthUnit(String name, String symbol) {
         this.name = name;

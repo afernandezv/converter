@@ -9,8 +9,8 @@ public enum TemperatureUnit {
     KELVIN("Kelvin", "K"),
     RANKINE("Rankine", "R");
 
-    private String name;
-    private String symbol;
+    private final String name;
+    private final String symbol;
 
     TemperatureUnit(String name, String symbol) {
         this.name = name;
