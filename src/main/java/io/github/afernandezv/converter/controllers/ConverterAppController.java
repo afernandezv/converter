@@ -1,6 +1,8 @@
 package io.github.afernandezv.converter.controllers;
 
 import io.github.afernandezv.converter.enums.*;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -51,6 +53,8 @@ public class ConverterAppController<T> implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        restrictDecimalNumbers();
+
         currencyButton.setOnAction(actionEvent -> {
             category = Category.CURRENCY;
             initControls();
@@ -93,5 +97,16 @@ public class ConverterAppController<T> implements Initializable {
         toSelect.setItems(items);
         fromSelect.getSelectionModel().selectFirst();
         toSelect.getSelectionModel().select(1);
+    }
+
+    public void restrictDecimalNumbers(){
+        this.valueText.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("-?([0-9]*)?(\\.[0-9]*)?")){
+                    valueText.setText(oldValue);
+                }
+            }
+        });
     }
 }
