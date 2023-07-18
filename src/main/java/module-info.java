@@ -4,6 +4,7 @@ module io.github.afernandezv.converter {
     requires java.net.http;
     requires com.google.gson;
     requires java.dotenv;
+    requires org.kordamp.ikonli.javafx;
 
 
     opens io.github.afernandezv.converter to javafx.fxml;
