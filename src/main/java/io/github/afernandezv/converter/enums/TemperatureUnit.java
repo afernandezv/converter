@@ -25,13 +25,13 @@ public enum TemperatureUnit {
         return symbol;
     }
 
-    public static List<TemperatureUnit> getUnits(){
-        return Arrays.asList(TemperatureUnit.values());
+    public static <T> List<T> getUnits(){
+        return (List<T>) Arrays.asList(TemperatureUnit.values());
     }
 
     @Override
     public String toString() {
-        return symbol;
+        return name;
     }
 }
 

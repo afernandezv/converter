@@ -29,12 +29,12 @@ public enum MassUnit {
         return symbol;
     }
 
-    public static List<MassUnit> getUnits(){
-        return Arrays.asList(MassUnit.values());
+    public static <T> List<T> getUnits(){
+        return (List<T>) Arrays.asList(MassUnit.values());
     }
 
     @Override
     public String toString() {
-        return symbol;
+        return name;
     }
 }

@@ -3,7 +3,7 @@ package io.github.afernandezv.converter.enums;
 import java.util.Arrays;
 import java.util.List;
 
-public enum LengthUnits {
+public enum LengthUnit {
     NANOMETROS("Nanómetros", "nm"),
     MICROMETROS("Micrómetros", "μm"),
     MILIMETROS("Milímetros", "mm"),
@@ -18,7 +18,7 @@ public enum LengthUnits {
     private String name;
     private String symbol;
 
-    LengthUnits(String name, String symbol) {
+    LengthUnit(String name, String symbol) {
         this.name = name;
         this.symbol = symbol;
     }
@@ -31,12 +31,12 @@ public enum LengthUnits {
         return symbol;
     }
 
-    public static List<LengthUnits> getUnits(){
-        return Arrays.asList(LengthUnits.values());
+    public static <T> List<T> getUnits(){
+        return (List<T>) Arrays.asList(LengthUnit.values());
     }
 
     @Override
     public String toString() {
-        return symbol;
+        return name;
     }
 }
