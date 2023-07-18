@@ -11,12 +11,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class ConverterAppController<T> implements Initializable {
+    @FXML
+    private Pane welcomePane;
     // Menu Icons
     @FXML
     private Button currencyButton;
@@ -77,6 +80,7 @@ public class ConverterAppController<T> implements Initializable {
     }
 
     private void initControls(){
+        hideWelcomePane();
         setHeaderText();
         populateChoiceBox();
     }
@@ -108,5 +112,11 @@ public class ConverterAppController<T> implements Initializable {
                 }
             }
         });
+    }
+
+    private void hideWelcomePane(){
+        if(this.welcomePane.isVisible()){
+            this.welcomePane.setVisible(false);
+        }
     }
 }
