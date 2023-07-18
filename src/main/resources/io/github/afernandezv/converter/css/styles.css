@@ -24,6 +24,12 @@
     -fx-border-color: #4657a1;
 }
 
+.welcome-pane {
+    -fx-pref-width: 800;
+    -fx-pref-height: 350;
+    -fx-background-color: #ffffff;
+}
+
 .control-pane {
     -fx-pref-width: 800;
     -fx-pref-height: 350;
