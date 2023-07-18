@@ -15,7 +15,7 @@
                 styleClass="font-icon" text="󰖢"/>
       <FontIcon fx:id="temperatureButton" iconLiteral="fas-temperature-high" iconSize="50" layoutX="75.0"
                 layoutY="300.0" styleClass="font-icon"/>
-      <FontIcon fx:id="lenghtButton" iconLiteral="fas-ruler-horizontal" iconSize="50" layoutX="68.0" layoutY="399.0"
+      <FontIcon fx:id="lengthButton" iconLiteral="fas-ruler-horizontal" iconSize="50" layoutX="68.0" layoutY="399.0"
                 styleClass="font-icon"/>
       <FontIcon fx:id="currencyButton" iconLiteral="mdi2c-currency-usd-circle" iconSize="50" layoutX="75.0"
                 layoutY="100.0" styleClass="font-icon"/>
