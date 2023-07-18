@@ -14,8 +14,14 @@
 .menu-pane{
     -fx-pref-width: 200;
     -fx-pref-height: 500;
-
     -fx-background-color: #4657a1;
+}
+
+.menu-buttons {
+    -fx-pref-width: 70;
+    -fx-pref-height: 70;
+    -fx-background-color: #4657a1;
+    -fx-border-color: #4657a1;
 }
 
 .control-pane {
