@@ -45,16 +45,16 @@
       </Button>
    </Pane>
    <Pane layoutX="200.0" prefHeight="200.0" prefWidth="200.0" styleClass="control-pane">
-      <ChoiceBox fx:id="fromSelect" layoutX="300.0" layoutY="156.0" prefWidth="150.0" styleClass="user-selection" />
-      <ChoiceBox fx:id="toSelect" layoutX="550.0" layoutY="156.0" prefWidth="150.0" styleClass="user-selection" />
-      <TextField fx:id="valueText" layoutX="50.0" layoutY="156.0" styleClass="current-value" />
+      <ChoiceBox fx:id="fromSelect" layoutX="275.0" layoutY="156.0" prefWidth="150.0" styleClass="user-selection" />
+      <ChoiceBox fx:id="toSelect" layoutX="540.0" layoutY="156.0" prefWidth="150.0" styleClass="user-selection" />
+      <TextField fx:id="valueText" layoutX="35.0" layoutY="156.0" styleClass="current-value" />
       <Button fx:id="convertButton" layoutX="300.0" layoutY="246.0" mnemonicParsing="false" styleClass="convert-button" text="Convertir">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Label layoutX="50.0" layoutY="134.0" styleClass="control-labels" text="Valor" />
-      <Label layoutX="300.0" layoutY="134.0" styleClass="control-labels" text="De" />
-      <Label layoutX="550.0" layoutY="134.0" styleClass="control-labels" text="A" />
+      <Label layoutX="35.0" layoutY="134.0" styleClass="control-labels" text="Valor" />
+      <Label layoutX="275.0" layoutY="134.0" styleClass="control-labels" text="De" />
+      <Label layoutX="540.0" layoutY="134.0" styleClass="control-labels" text="A" />
       <Label fx:id="headerText" layoutX="50.0" layoutY="50.0" styleClass="header-label" />
    </Pane>
    <Pane layoutX="200.0" layoutY="350.0" prefHeight="200.0" prefWidth="200.0" styleClass="result-pane">
