@@ -15,7 +15,7 @@ public class ConverterApp extends Application {
         System.setProperty("prism.lcdtext", "false");
         FXMLLoader fxmlLoader = new FXMLLoader(ConverterApp.class.getResource("views/ConverterAppView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1000, 500);
-        stage.setTitle("Currency & Unit Converter");
+        stage.setTitle("Conversor de divisas y unidades");
         stage.setResizable(false);
         stage.getIcons().add(new Image(Objects.requireNonNull(ConverterApp.class.getResourceAsStream("icons/appIcon.png"))));
         stage.setScene(scene);
