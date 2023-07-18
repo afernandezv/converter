@@ -51,7 +51,25 @@ public class ConverterAppController<T> implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        currencyButton.setOnAction(actionEvent -> {
+            category = Category.CURRENCY;
+            initControls();
+        });
 
+        lengthButton.setOnAction(actionEvent -> {
+            category = Category.LENGTH;
+            initControls();
+        });
+
+        massButton.setOnAction(actionEvent -> {
+            category = Category.MASS;
+            initControls();
+        });
+
+        temperatureButton.setOnAction(actionEvent -> {
+            category = Category.TEMPERATURE;
+            initControls();
+        });
     }
 
     private void initControls(){
