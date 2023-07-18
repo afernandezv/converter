@@ -12,6 +12,7 @@ import java.util.Objects;
 public class ConverterApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        System.setProperty("prism.lcdtext", "false");
         FXMLLoader fxmlLoader = new FXMLLoader(ConverterApp.class.getResource("views/ConverterAppView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1000, 500);
         stage.setTitle("Currency & Unit Converter");
