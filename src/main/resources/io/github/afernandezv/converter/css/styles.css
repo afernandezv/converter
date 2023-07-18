@@ -69,6 +69,20 @@
     -fx-font-smoothing-type: gray;
 }
 
+.user-selection .context-menu {
+    -fx-background-color: #f5f7ff;
+}
+
+.user-selection .menu-item .label {
+    -fx-font-size: 16;
+    -fx-font-family: 'Montserrat Light', sans-serif;
+    -fx-font-smoothing-type: gray;
+}
+
+.user-selection .menu-item:focused{
+    -fx-background-color: #4657a1;
+}
+
 .convert-button {
     -fx-pref-width: 200;
     -fx-pref-height: 40;
