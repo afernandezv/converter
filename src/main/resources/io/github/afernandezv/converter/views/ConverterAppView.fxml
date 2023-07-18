@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="main-pane" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.afernandezv.converter.controllers.ConverterAppController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="main-pane" stylesheets="@../css/styles.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.afernandezv.converter.controllers.ConverterAppController">
    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="menu-pane">
       <Button fx:id="currencyButton" layoutX="65.0" layoutY="35.0" mnemonicParsing="false" styleClass="menu-buttons">
          <graphic>
