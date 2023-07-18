@@ -1,8 +1,8 @@
 package io.github.afernandezv.converter.controllers;
 
 import io.github.afernandezv.converter.enums.*;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import io.github.afernandezv.converter.utils.CurrencyConverter;
+import io.github.afernandezv.converter.utils.UnitConverter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -14,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -54,8 +55,12 @@ public class ConverterAppController<T> implements Initializable {
 
     private Category category;
 
+    private DecimalFormat decimalFormat;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        decimalFormat = new DecimalFormat();
+        decimalFormat.setMaximumFractionDigits(4);
         restrictDecimalNumbers();
 
         currencyButton.setOnAction(actionEvent -> {
@@ -77,6 +82,8 @@ public class ConverterAppController<T> implements Initializable {
             category = Category.TEMPERATURE;
             initControls();
         });
+
+        convertButton.setOnAction(actionEvent -> convert());
     }
 
     private void initControls(){
@@ -104,12 +111,9 @@ public class ConverterAppController<T> implements Initializable {
     }
 
     public void restrictDecimalNumbers(){
-        this.valueText.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.matches("-?([0-9]*)?(\\.[0-9]*)?")){
-                    valueText.setText(oldValue);
-                }
+        this.valueText.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("-?([0-9]*)?(\\.[0-9]*)?")){
+                valueText.setText(oldValue);
             }
         });
     }
@@ -117,6 +121,46 @@ public class ConverterAppController<T> implements Initializable {
     private void hideWelcomePane(){
         if(this.welcomePane.isVisible()){
             this.welcomePane.setVisible(false);
+        }
+    }
+
+    private boolean unitsAreEquals(String from, String to){
+        return from.equals(to);
+    }
+
+    private void convert(){
+        try {
+            double value = Double.parseDouble(valueText.getText());
+            String from = null;
+            String to = null;
+            double convertedValue;
+            switch (category.name()) {
+                case "CURRENCY" -> {
+                    from = ((CurrencyType) fromSelect.getSelectionModel().getSelectedItem()).name();
+                    to = ((CurrencyType) toSelect.getSelectionModel().getSelectedItem()).name();
+                    convertedValue = (unitsAreEquals(from, to)) ? value : CurrencyConverter.convertCurrency(value, from, to);
+                    resultText.setText(decimalFormat.format(value) + " " + from + " = " + decimalFormat.format(convertedValue) + " " + to);
+                    return;
+                }
+                case "LENGTH" -> {
+                    from = ((LengthUnit) fromSelect.getSelectionModel().getSelectedItem()).getSymbol();
+                    to = ((LengthUnit) toSelect.getSelectionModel().getSelectedItem()).getSymbol();
+                }
+                case "MASS" -> {
+                    from = ((MassUnit) fromSelect.getSelectionModel().getSelectedItem()).getSymbol();
+                    to = ((MassUnit) toSelect.getSelectionModel().getSelectedItem()).getSymbol();
+                }
+                case "TEMPERATURE" -> {
+                    from = ((TemperatureUnit) fromSelect.getSelectionModel().getSelectedItem()).getSymbol();
+                    to = ((TemperatureUnit) toSelect.getSelectionModel().getSelectedItem()).getSymbol();
+                }
+                default -> System.out.println("Conversion de " + category.name() + " no implementada");
+            }
+            assert from != null;
+            convertedValue = (unitsAreEquals(from, to)) ? value : UnitConverter.convertUnit(category.name().toLowerCase(), value, from, to);
+            resultText.setText(decimalFormat.format(value) + " " + from + " = " + decimalFormat.format(convertedValue) + " " + to);
+        } catch (NumberFormatException e) {
+            resultText.setText("Introduce un valor válido");
         }
     }
 }
