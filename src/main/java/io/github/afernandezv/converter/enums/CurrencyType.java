@@ -1,39 +1,32 @@
 package io.github.afernandezv.converter.enums;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
 public enum CurrencyType {
-    USD("Dólar Estadounidense", "USD"),
-    EUR("Euro", "EUR"),
-    GBP("Libra Esterlina", "GBP"),
-    MXN("Peso Mexicano", "MXN"),
-    KRW("Won Surcoreano", "KRW"),
-    JPY("Yen Japonés", "YEN");
+    USD("Dólar Estadounidense"),
+    EUR("Euro"),
+    GBP("Libra Esterlina"),
+    MXN("Peso Mexicano"),
+    KRW("Won Surcoreano"),
+    JPY("Yen Japonés");
 
-    private String type;
-    private String symbol;
+    private final String name;
 
-    CurrencyType(String type, String symbol) {
-        this.type = type;
-        this.symbol = symbol;
+    CurrencyType(String name) {
+        this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public static List<CurrencyType> getTypes(){
-        return Arrays.asList(CurrencyType.values());
+    public static <T> List<T> getTypes(){
+        return (List<T>) Arrays.asList(CurrencyType.values());
     }
 
     @Override
     public String toString() {
-        return type;
+        return name;
     }
 }
