@@ -46,15 +46,4 @@ public class Unit {
     public void setPlural(String plural) {
         this.plural = plural;
     }
-
-    @Override
-    public String toString() {
-        return "Unit{" +
-                "abbr='" + abbr + '\'' +
-                ", measure='" + measure + '\'' +
-                ", system='" + system + '\'' +
-                ", singular='" + singular + '\'' +
-                ", plural='" + plural + '\'' +
-                '}';
-    }
 }
