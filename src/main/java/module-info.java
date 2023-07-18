@@ -5,6 +5,8 @@ module io.github.afernandezv.converter {
     requires com.google.gson;
     requires java.dotenv;
     requires org.kordamp.ikonli.javafx;
+    requires org.kordamp.ikonli.fontawesome5;
+    requires org.kordamp.ikonli.materialdesign2;
 
 
     opens io.github.afernandezv.converter to javafx.fxml;
