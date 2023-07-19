@@ -45,6 +45,7 @@ Actualmente la aplicación puede realizar conversiones entre las siguientes divi
 * Es necesaria una conexión a internet para el consumo de las API's
 * Número limitado de peticiones a las API's. En el caso de [Currency Conversion API](https://api-ninjas.com/api/convertcurrency) solo se pueden realizar 100 peticiones diarias y 50,000 peticiones mensuales para [Measurement Unit Converter API](https://rapidapi.com/me-Egq5JBzo4/api/measurement-unit-converter).
 ## Funcionamiento
+https://github.com/afernandezv/converter/assets/9130344/061f692b-c833-4b22-90ef-5f0ff8231f00
 ## Trabajo a futuro
 ### Funcionalidades
 * Implementar un modo offline para realizar las conversiones sin la necesidad de API's.
