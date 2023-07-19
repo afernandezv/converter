@@ -2,7 +2,6 @@ package io.github.afernandezv.converter.utils;
 
 import com.google.gson.Gson;
 import io.github.afernandezv.converter.pojo.unitconversion.UnitConversion;
-import io.github.cdimascio.dotenv.Dotenv;
 
 import java.io.IOException;
 import java.net.URI;
@@ -17,14 +16,13 @@ public class UnitConverter {
     }
 
     private static double getConversion(String type, double value, String fromUnit, String toUnit) {
-        Dotenv dotenv = Dotenv.load();
         Gson gson = new Gson();
         UnitConversion unitConversion;
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://measurement-unit-converter.p.rapidapi.com/" + type + "?value=" + value + "&from=" + fromUnit + "&to=" + toUnit))
-                .header("X-RapidAPI-Key", dotenv.get("RAPID_API_KEY"))
-                .header("X-RapidAPI-Host", dotenv.get("RAPID_API_HOST"))
+                .header("X-RapidAPI-Key", "API_KEY")
+                .header("X-RapidAPI-Host", "measurement-unit-converter.p.rapidapi.com")
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
 
