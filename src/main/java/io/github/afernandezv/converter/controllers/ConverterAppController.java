@@ -66,21 +66,25 @@ public class ConverterAppController<T> implements Initializable {
         currencyButton.setOnAction(actionEvent -> {
             category = Category.CURRENCY;
             initControls();
+            clearInputAndResult();
         });
 
         lengthButton.setOnAction(actionEvent -> {
             category = Category.LENGTH;
             initControls();
+            clearInputAndResult();
         });
 
         massButton.setOnAction(actionEvent -> {
             category = Category.MASS;
             initControls();
+            clearInputAndResult();
         });
 
         temperatureButton.setOnAction(actionEvent -> {
             category = Category.TEMPERATURE;
             initControls();
+            clearInputAndResult();
         });
 
         convertButton.setOnAction(actionEvent -> convert());
@@ -90,6 +94,11 @@ public class ConverterAppController<T> implements Initializable {
         hideWelcomePane();
         setHeaderText();
         populateChoiceBox();
+    }
+
+    private void clearInputAndResult(){
+        valueText.setText("");
+        resultText.setText("");
     }
 
     private void setHeaderText(){
